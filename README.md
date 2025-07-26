@@ -50,6 +50,25 @@
 **Tech:** ESP32, Arduino IDE, Breadboard wiring  
 📸 *Photo and video coming soon*
 
+🧠 NEPTUNE Web AI Assistant
+
+NEPTUNE is a voice-powered web assistant built with Flask and JavaScript that uses ChatGPT or Groq as its AI brain. It features a sleek dark-mode interface with glowing UI elements, voice-to-text input, text-to-speech output, and dynamic provider switching between OpenAI and Groq.
+✅ Features
+
+    🎙️ Voice input with real-time speech-to-text
+
+    🧠 AI responses powered by OpenAI or Groq (switchable in UI)
+
+    🔊 Text-to-speech output via pyttsx3
+
+    🌑 Modern dark mode UI with glow effects
+
+    🖥️ Web frontend: index.html, style.css, script.js
+
+    🔐 Secure API key loading via .env
+
+    🔁 Flask backend with /ask endpoint and CORS enabled
+
 ---
 
 ### 🔗 Links
