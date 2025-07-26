@@ -58,7 +58,7 @@ NEPTUNE is a hybrid offline/online personal assistant with a dark-mode browser i
 * ✅ Animated **dark-themed web UI** with glowing input, dropdown provider switch
 * ✅ Built-in `/ask` endpoint for command handling
 * ✅ App runs at `localhost:5000` with full CORS enabled
-* ✅ Designed for automation add-ons like job form autofill, resume summarizing, and sensor input parsing
+* ✅ Designed for automation 
 
 ---
 
