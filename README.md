@@ -1,83 +1,74 @@
-# 💻 Alise McNiel | Tech Portfolio
+💻 Alise McNiel | Tech Portfolio
 
 👋🏾 I'm an IT tech and hands-on builder with a passion for embedded systems, smart automation, and cybersecurity. I use ESP32, Arduino, and C++ to bring my ideas to life — from touchscreen hacking tools to home automation dashboards.
 
----
+🖥️ CM Box – ESP32 Touchscreen Terminal (Dell Linux Setup Guide)
 
-# CM Box (ESP32 Touchscreen Terminal) – Dell Setup Guide 🖥️⚡
-
-This project sets up the CM Box hacking toolkit using the **ESP32-2432S028R (C.Y.D.) board** with a **2.8" resistive touchscreen**. This README covers setup on a **Dell Linux laptop**, using Arduino IDE with custom TFT settings.
-
----
-
-## ✅ What We Did
-
-- ✅ Installed Arduino IDE 1.8.19 on Dell (Ubuntu)
-- ✅ Installed ESP32 board definitions
-- ✅ Installed required libraries like `TFT_eSPI`
-- ✅ Switched `TFT_eSPI` config to use **Setup249_ESP32_2432S028R**
-- ✅ Verified that `User_Setup_Select.h` correctly points to the CYD setup file
-- ✅ Attempted multiple firmware uploads (Marauder & custom CM_Box firmware)
-- ✅ Flashed `.bin` files using `esptool.py` and also prepped for web flasher
-- ✅ Confirmed correct `.bin` file download and targeting the right COM port
-- ✅ Verified compatibility with Dell’s Linux system for future debugging
-
----
-
-## 🛠 Dependencies
-
-- **ESP32 Board Definitions**: via Arduino Boards Manager  
-- **TFT_eSPI Library**: manually configured
-- **Python `esptool.py`** for CLI flashing
-- Optionally: [ESP Web Flasher](https://esphome.github.io/esp-web-tools/) for quick GUI flashing
-
----
-
- 🤖 NEPTUNE AI (Local Web Assistant) – Ubuntu Setup Guide 🤖🔫
-
-This project builds a local AI assistant named NEPTUNE, running on a custom web interface with voice input/output. It uses a Flask backend, a glowing dark-themed HTML/JS frontend, and supports both OpenAI and Groq API providers.
-
-Built and tested on a Dell Ubuntu Linux laptop.
+This project sets up the CM Box hacking toolkit using the ESP32-2432S028R (C.Y.D.) board with a 2.8" resistive touchscreen. This guide walks through configuration on a Dell Ubuntu Linux system using Arduino IDE and CLI tools.
 
 ✅ What We Did
 
-🔳 Installed Flask and Python dependencies in virtual environment (neptune-venv)
+✅ Installed Arduino IDE 1.8.19 on Dell (Ubuntu)
 
-🔳 Built custom Flask server (neptune.py) with:
+✅ Installed ESP32 board definitions
 
-Provider switching (OpenAI / Groq)
+✅ Installed required libraries like TFT_eSPI
 
-.env file loading for API keys
+✅ Switched TFT_eSPI config to use Setup249_ESP32_2432S028R
 
-🔳 Created a glowing dark mode UI:
+✅ Verified that User_Setup_Select.h correctly points to the CYD setup file
 
-Input field, mic button, and send button
+✅ Attempted multiple firmware uploads (Marauder & custom CM_Box firmware)
 
-Dropdown menu to select provider
+✅ Flashed .bin files using esptool.py and also prepped for web flasher
 
-🔳 Added voice-to-text with SpeechRecognition + PyAudio
+✅ Confirmed correct .bin file download and targeting the right COM port
 
-🔳 Added voice output using pyttsx3 and ElevenLabs TTS
+✅ Verified compatibility with Dell’s Linux system for future debugging
 
-🔳 Enabled /ask endpoint to return and speak AI replies
+⚙️ Dependencies
 
-🔳 Created bridge_neptune_voice_eleven.py to link mic input to assistant
+ESP32 Board Definitions: via Arduino Boards Manager
 
-🔳 App runs smoothly at http://localhost:5000 with CORS enabled
+TFT_eSPI Library: manually configured
 
-🛠 Dependencies
+Python esptool.py for CLI flashing
 
-Flask for backend server
+Optionally: ESP Web Flasher for quick GUI flashing
 
-SpeechRecognition, PyAudio for mic input
+🤖 NEPTUNE AI – Local Web Assistant (Ubuntu Setup Guide)
 
-pyttsx3 or elevenlabs for voice output
+NEPTUNE is a custom local AI assistant that runs on your machine with voice input, voice output, and a glowing dark-mode web interface. It's designed for command mode workflows and automation.
 
-Flask-CORS to enable local dev mode
+✅ What We Did
 
-python-dotenv to load API keys securely
+✅ Created and activated a Python venv (neptune-venv)
 
-Optional: Selenium + PyAutoGUI for job automation
+✅ Built neptune.py Flask backend with provider switching (OpenAI / Groq)
+
+✅ Loaded API keys securely via .env file
+
+✅ Created animated frontend (HTML/JS/CSS) with mic button and dark glow UI
+
+✅ Added voice-to-text with SpeechRecognition + PyAudio
+
+✅ Added voice output using pyttsx3 and ElevenLabs API
+
+✅ Built bridge_neptune_voice_eleven.py to connect mic → assistant → speech
+
+✅ App runs locally at http://localhost:5000 with CORS enabled
+
+⚙️ Dependencies
+
+Flask (Backend)
+
+SpeechRecognition, PyAudio (Mic input)
+
+pyttsx3 or ElevenLabs API (Voice output)
+
+Flask-CORS, dotenv, requests
+
+Optional: Selenium + PyAutoGUI (job automation)
 
 🧠 Notes
 
@@ -87,109 +78,137 @@ source neptune-venv/bin/activate
 # Run the assistant
 python3 neptune.py
 
-The Groq provider must return a "choices" field or will cause a KeyError
+Groq must return a choices field to avoid KeyError
 
-ElevenLabs speech won’t work without a valid API key
+ElevenLabs requires a valid API key
 
-Confirm microphone permissions if speech fails
+Ensure microphone permissions are enabled
 
-Designed for local offline/online hybrid assistant workflows. Can be expanded to job automation, sensor interfacing, and AI agent control.
-
-
-🔧 Embedded Systems Portfolio – ESP32 Projects
-
-Welcome to my collection of embedded systems projects built with ESP32, Arduino, and touchscreen interfaces. These are hands-on demos blending IoT, sensors, automation, and creative interfaces—perfect for showing off both software and hardware skills.
 🏠 SmartPad – ESP32 Smart Home System
 
-A fully functional smart home demo that showcases real-time automation and environmental tracking.
-💡 Features:
+A full-featured smart home automation prototype using sensors, relays, and a web dashboard.
 
-    PIR motion detection triggers alerts and RGB LED effects
+✅ What We Did
 
-    DHT11 sensor reports temperature & humidity live to the web UI
+✅ Connected DHT11 sensor to display live temp & humidity
 
-    Buzzer alarms when unauthorized movement is detected
+✅ Set up PIR sensor to detect motion and trigger alerts
 
-    Relay module controls external devices (e.g., lights or fans)
+✅ Linked buzzer to motion for sound alarm
 
-    Responsive web dashboard served from ESP32 (HTML/CSS/JS)
+✅ Controlled external device with relay (e.g., fan/lamp)
 
-🧰 Tech Stack:
+✅ Built and served responsive web dashboard via ESP32
 
-ESP32, DHT11, PIR sensor, Relay, RGB LED, Web Server (ESPAsync), Arduino IDE
+⚙️ Tech Stack
 
-📸 Demo video and screenshots coming soon
-🐾 TouchPet – Virtual Pet Game (Tamagotchi Clone)
+ESP32, DHT11, PIR Sensor, Relay Module, RGB LED
 
-A pixel-style pet game with touchscreen interaction and mood simulation.
-🐱 Features:
+HTML/CSS/JS dashboard served via ESPAsyncWebServer
 
-    Interactive touchscreen buttons for feeding, playing, and checking mood
+📸 Photos and video coming soon
 
-    Animated sprites change based on pet’s happiness, hunger, and rest
+🐾 TouchPet – Tamagotchi-Style Virtual Pet Game
 
-    OLED screen displays pet's expressions and real-time status
+Touchscreen-based pixel pet game with mood and hunger tracking.
 
-    Built as a mini-game engine in C++ using object-oriented design
+✅ What We Did
 
-🧰 Tech Stack:
+✅ Designed sprite faces for happy, sad, tired, and hungry moods
 
-ESP32, ILI9341 2.8" Touchscreen, TFT_eSPI, TouchLib, C++
+✅ Programmed button interface to feed, play, or rest your pet
 
-📸 Gameplay video and sprite animations coming soon
-👁️ WatchCat – ESP32-CAM Motion Surveillance
+✅ Displayed real-time status via OLED
 
-An IoT-based security prototype using a camera and motion sensor.
-🛡️ Features:
+✅ Used OOP in C++ to structure pet behavior logic
 
-    ESP32-CAM live streaming feed
+⚙️ Tech Stack
 
-    PIR motion sensor triggers a flashing LED alert
+ESP32, ILI9341 2.8" Touchscreen, TFT_eSPI, TouchLib
 
-    Expansion-ready for cloud notifications or image capture
+Object-oriented C++ game loop
 
-    Great for experimenting with ESP32-CAM automation logic
+📸 Gameplay and sprite animation preview coming soon
 
-🧰 Tech Stack:
+👁️ WatchCat – ESP32-CAM Motion Alert System
 
-ESP32-CAM, PIR Sensor, GPIO-controlled LEDs, Arduino IDE
+A mini surveillance system using ESP32-CAM and motion detection.
 
-📸 Video capture and alert test shots on the way
-🎛️ ControlBox v1 – Modular Sensor Testing Rig
+✅ What We Did
 
-A versatile dev board setup with multiple sensor modules and controls.
-⚙️ Features:
+✅ Set up ESP32-CAM for live video stream
 
-    Joystick, buttons, RFID scanner, and LCD output
+✅ Connected PIR sensor to detect motion
 
-    Easy-swappable design with pin headers for testing new components
+✅ Triggered visual LED alerts on motion
 
-    Used to prototype input/output handling, serial comms, and modular logic
+✅ Built test system for future cloud sync expansion
 
-    Mounted on a wooden panel for portability and workspace organization
+⚙️ Tech Stack
 
-🧰 Tech Stack:
+ESP32-CAM, PIR sensor, LED output
 
-ESP32, MFRC522 RFID, LCD1602, Joystick, Pushbuttons, C++
+Arduino IDE with serial debugging
 
-📸 Workspace pics and demo interactions coming soon
-📚 DevBoard Library – ESP32 Code & Wiring Templates
+📸 Video feed snapshot and alert demo coming soon
 
-A ready-to-use library of sample code and hookup diagrams.
-🧩 Features:
+🎛️ ControlBox v1 – Modular Sensor Panel
 
-    Reusable C++ functions for buzzer tones, RGB LED animation, and OLED text
+All-in-one dev rig with multiple inputs and outputs for sensor testing.
 
-    Pinout-ready examples for HC-SR04, PIR, Temp/Humidity, Light sensors
+✅ What We Did
 
-    Basic web server templates and OTA update functions
+✅ Wired up joystick, buttons, and RFID module
 
-    Modular structure for plugging into any new ESP32 or Arduino project
+✅ Added LCD1602 display for feedback
 
-🧰 Tech Stack:
+✅ Created flexible header system for swapping sensors
 
-ESP32, Arduino IDE, Breadboard, DHT11, OLED SSD1306, Buzzer, RGB LED
+✅ Used for logic testing, I/O control, and classroom-style demos
 
-📸 Preview images of breadboard setups and working demos coming soon
+⚙️ Tech Stack
 
-    💬 All codebases and diagrams are 100% beginner-friendly, with inline comments and serial debug output to help anyone build their own smart systems or test rigs from scratch.
+ESP32, MFRC522 RFID, LCD1602, Joystick, Buttons
+
+Wood panel mounted for portability
+
+📸 Photos of sensor panel and test outputs coming soon
+
+📚 DevBoard Library – Wiring + Codebase Templates
+
+Collection of starter templates and wiring guides for rapid prototyping.
+
+✅ What We Did
+
+✅ Created reusable C++ functions for RGB, OLED, buzzer, etc.
+
+✅ Made labeled diagrams for sensor pinouts
+
+✅ Included example sketches for ultrasonic, temp/humidity, motion
+
+✅ Added OTA example for updating firmware wirelessly
+
+⚙️ Tech Stack
+
+ESP32, Breadboard, OLED SSD1306, DHT11, HC-SR04, RGB LED, Arduino IDE
+
+📸 Wiring diagrams and breadboard photos coming soon
+
+💬 Freelance Availability
+
+I build embedded systems and automation interfaces for personal, commercial, or educational projects.
+
+💼 Services Offered:
+
+Custom Arduino/ESP32 projects
+
+Dashboard + UI development (touchscreen & web)
+
+Debugging + code refactoring
+
+Wiring diagrams + hardware prototyping
+
+📧 Contact: mobileitsoulutions222@gmail.com
+
+Let’s build something dope together 🚀
+
